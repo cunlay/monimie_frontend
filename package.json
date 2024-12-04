@@ -1,0 +1,19 @@
+{
+  "name": "Monimie Crypto Bot",
+  "main": "app.js",
+  "description": "Buy and sell cryptocurencies, bitcoin",
+  "version": "2.0.1",  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "node-persist": "0.0.8",
+    "node.js": "0.0.0",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1"
+  },
+  "author": "Adekunle Ogundijo",
+  "license": "ISC"
+}

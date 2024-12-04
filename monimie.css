@@ -1,0 +1,1206 @@
+/*************************************************************
+[TABLE OF CONTENTS]
+
+- MENU BUTTON
+- THE MENU
+- BACKGROUND OVERLAY
+- WIDGET LOCATION
+- SCROLLBAR STYLING
+- SOCIAL BAR
+- SOCIAL ICONS
+- CLOSE BUTTON
+- Z-INDEXES
+*************************************************************/
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+/* MENU BUTTON
+**************************************************/
+.monimie-menu-btn-wrapper {
+    position:fixed;
+    top:25px;
+    left:25px;
+	min-width:25px;
+    max-width:500px;
+    height:30px;
+	cursor:pointer;
+    background-color:#23527c;
+    border:1px solid #23527c;
+    border-radius:15px;
+	
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    
+    -webkit-box-shadow:inset 0px 10px 15px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow:inset 0px 10px 15px 0px rgba(0,0,0,0.1);
+    box-shadow:inset 0px 10px 15px 0px rgba(0,0,0,0.1);
+    
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	transition: all .3s ease;
+	
+	/* remove the flickering effect of a tapped link/button when on a touch device */
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/* when menu active */
+.monimie-menu-btn-active {
+	background-color:#23527c;
+    border:1px solid #23527c;
+}
+/* menu bars wrapper */
+.monimie-menu-btn-wrapper-inner {
+    position:absolute;
+    top:1px;
+    left:1px;
+    width:26px;
+    height:26px;
+    border-radius:15px;
+    
+    background-color:rgba(0,0,0,.075);
+    
+    -webkit-box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    box-shadow:inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+}
+/* menu bars */
+.monimie-menu-btn {
+    position:relative;
+    top:12px;
+    left:7px;
+}
+.monimie-menu-btn-middle {
+    position:relative;
+    top:12px;
+    left:7px;
+    width:12px;
+    height:2px;
+    
+    background-color:#D7D7D7;
+}
+.monimie-menu-btn:before,
+.monimie-menu-btn:after {
+    content:'';
+    position:absolute;
+    display:block;
+    width:12px;
+    height:2px;
+    background-color:#D7D7D7;
+}
+.monimie-menu-btn:before { top:-4px; }
+.monimie-menu-btn:after { top:4px; }
+/* active color */
+.monimie-menu-btn-active .monimie-menu-btn,
+.monimie-menu-btn-active .monimie-menu-btn:before,
+.monimie-menu-btn-active .monimie-menu-btn:after { background-color:#fff; }
+/* menu button text */
+.monimie-menu-btn-text-wrapper {
+    display:table;
+    color:#fff;
+    font-size:13px;
+    font-family:'Roboto';
+    font-weight:400;
+    margin:0 14px 0 35px;
+    height:100%;
+}
+.monimie-menu-btn-text {
+    display:table-cell;
+    vertical-align:middle;
+}
+/* animations */
+.monimie-menu-btn-middle,
+.monimie-menu-btn:before,
+.monimie-menu-btn:after {
+    -webkit-transition:all .35s ease;
+	-moz-transition:all .35s ease;
+	transition:all .35s ease;
+}
+/* middle bar*/
+.monimie-menu-btn-active div.monimie-menu-btn-middle {
+    opacity:0;
+    
+    -webkit-transform:scaleX(0);
+    -moz-transform:scaleX(0);
+    transform:scaleX(0);
+}
+/* top bar*/
+.monimie-menu-btn-active .monimie-menu-btn:before {
+    -webkit-transform:translateY(4px) rotate(135deg);
+    -moz-transform:translateY(4px) rotate(135deg);
+    transform:translateY(4px) rotate(135deg);
+}
+/* bottom bar*/
+.monimie-menu-btn-active .monimie-menu-btn:after {
+    -webkit-transform:translateY(-4px) rotate(45deg);
+    -moz-transform:translateY(-4px) rotate(45deg);
+    transform:translateY(-4px) rotate(45deg);
+}
+/* menu tooltip */
+.monimie-menu-tooltip {
+    position:absolute;
+    top:40px;
+    left:10px;
+    width:10px;
+    height:10px;
+    display:none;
+}
+.monimie-menu-btn-active .monimie-menu-tooltip {
+    display:inline;
+}
+.monimie-menu-tooltip:before {
+    content:'';
+    position:absolute;
+	width:0;
+	height:0;
+	border-left:6px solid transparent;
+	border-right:6px solid transparent;
+
+	/* tooltip color */
+	border-bottom:6px solid #1B1B1B;
+}
+
+.monimie-menu-btn-wrapper-right {
+    
+    left: 25px;
+    min-width: 125px;
+	max-width: 150px;
+	
+}
+
+.monimie-menu-btn-wrapper-inner-right {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    width: 26px;
+    height: 26px;
+    border-radius: 15px;
+    background-color: #ccc;
+    -webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+}
+
+.monimie-menu-btn-middle-right {
+    position: relative;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+}
+
+.online{
+	background-color: greenyellow;
+}
+
+
+/* THE MENU
+**************************************************/
+/* main menu */
+.monimie-chat-area-wrapper {
+    position:fixed;
+    top:71px;
+    left:-1000%;
+    margin:0;
+    padding:0;
+    width:calc(100% - 30px);
+    height:calc(100% - 95px);
+    overflow-y:hidden;
+    overflow-x:hidden;    
+    font-family:'Roboto';
+    font-weight:400;
+    
+    /* for sticky on iOS (otherwise finger will have to be lifted before menubar sticks to top) */
+    transform:translate3d(0px,0px,0px);
+    -webkit-transform:translate3d(0px,0px,0px);	
+}
+.monimie-menu-active {
+    left:16px;
+}
+.monimie-chat-area-wrapper-scrolled { position:fixed; top:65px; }
+.monimie-subchat-area {
+    position:relative;
+    width:100%;
+    height:calc(100% - 113px);
+    top:0;
+    right:0;
+    left:0;	
+    overflow-y:auto;
+    overflow-x:hidden;
+    background-color:#1B1B1B;
+}
+.smooth-scroll {
+    /* smooth scroll on touch devices */
+	-webkit-overflow-scrolling:touch;
+}
+.monimie-chat-area-inner {
+    padding:5px 15px 6px 7px;
+    -webkit-transform:translateY(25px);
+    -moz-transform:translateY(25px);
+    transform:translateY(25px);
+    
+    opacity:0;
+    
+    -webkit-transition:all .5s ease;
+	-moz-transition:all .5s ease;
+	transition:all .5s ease;
+}
+.monimie-menu-active .monimie-chat-area-inner {
+    -webkit-transform:translateY(0);
+	-moz-transform:translateY(0);
+	transform:translateY(0);
+    opacity:1;
+}
+/* main menu */
+.monimie-subchat-area ul {
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+/* individual menu items */
+.monimie-subchat-area ul > li {
+	list-style-type:none;
+	display:block;
+	margin:0;
+	padding:7px 0 9px 0;
+    border-top:1px solid #2B2B2B;
+}
+.monimie-subchat-area ul li:first-child {
+    border-top:none;
+}
+/* main menu item */
+.monimie-subchat-area ul li a {
+    font-size:15px;
+    font-weight:700;
+    color:#fff;
+	margin:0 5px 0 8px;
+	padding:0;
+	text-decoration:none;
+	letter-spacing:0;
+	-webkit-transition:all .2s ease;
+	-moz-transition:all .2s ease;
+	transition:all .2s ease;
+}
+/* main menu item hover */
+.monimie-subchat-area ul li a:hover,
+.monimie-subchat-area ul li.current-menu-item a:hover {
+	text-decoration:underline;
+}
+/* sub-menu */
+.monimie-subchat-area ul.sub-menu {
+    margin-top:3px;
+    padding-left:8px;
+}
+.monimie-subchat-area ul.sub-menu li {
+	display:inline-block;
+	margin:0;
+	padding:0 8px 0 0;
+    border-top:none;
+}
+.monimie-subchat-area ul.sub-menu li a {
+    position:relative;
+    font-size:13px;
+    font-weight:400;
+    color:#A0A0A0;
+	margin:0;
+	padding:0;
+	text-decoration:none;
+	letter-spacing:0;
+
+	-webkit-transition:all .2s ease;
+	-moz-transition:all .2s ease;
+	transition:all .2s ease;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children > a:hover,
+.monimie-subchat-area ul.sub-menu li a:hover {
+    color:#fff;
+    text-decoration:underline;
+}
+.monimie-subchat-area ul.sub-menu li a::after {
+    position:absolute;
+    right:-7px;
+    display:inline-block;
+    content:'|';
+    color:#444;
+}
+.monimie-subchat-area ul.sub-menu li:last-child a::after {
+    display:none;
+}
+/* menu description */
+.monimie-subchat-area ul.sub-menu .monimie-menu-item-description,
+.monimie-menu-item-description:empty { display:none; }
+.monimie-menu-item-description {
+    font-weight:normal;
+    font-size:12px;
+    color:#6b6b6b;
+    padding:0;
+    margin:3px 0 0 8px;
+    display:block;
+    cursor:default;
+}
+/* 3rd level sub-menu */
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children > a {
+    color:#666;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children {
+    display:inline;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children ul {
+    display:inline;
+    margin:0;
+    padding:0;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children > a::after {
+    content:':';
+    color:#666;
+    right:-3px;
+    display:inline-block;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children ul li {
+    padding:0;
+    margin:0 0 0 1px;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children ul li a::after {
+    position:absolute;
+    right:-3px;
+    display:inline-block;
+    content:',';
+    color:#444;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children ul li:last-child a::after {
+    position:absolute;
+    content:'|';
+    right:-7px;
+    color:#444;
+}
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children:last-child ul li:last-child a::after {
+    content:'';
+}
+/* shade at the bottom of the menu */
+.monimie-chat-area-wrapper::before {
+    content:'';
+    position:absolute;
+    bottom:50px;
+    width:100%;
+    height:40px;
+    pointer-events:none;
+    
+    background:url(img/menu-shade.png) repeat-x bottom center;
+    background-size:26px 20px;
+}
+/* menu item separator placements */
+.monimie-subchat-area ul.sub-menu li a::after,
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children > a::after,
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children ul li a::after,
+.monimie-subchat-area ul.sub-menu li.menu-item-has-children ul li:last-child a::after {
+    top:0px;
+}
+
+
+/* BACKGROUND OVERLAY
+**************************************************/
+/* content overlay (the transparent div that is shown over the entire page when menu is opened) */
+.monimie-overlay {
+	position:fixed;
+	top:0;
+	width:100%;
+    height:100%;
+    height:100vh;
+	left:-1000%;
+	opacity:0;
+    cursor:pointer;
+
+	/* content overlay background color */
+	background-color:#000;
+    
+	-webkit-transition:opacity .4s ease, left 0s ease .4s;
+	-moz-transition:opacity .4s ease, left 0s ease .4s;
+	transition:opacity .4s ease, left 0s ease .4s;
+}
+.monimie-overlay-active {
+	left:0;
+    opacity:.2;
+    
+    -webkit-transition:opacity .4s ease, left 0s ease 0s;
+	-moz-transition:opacity .4s ease, left 0s ease 0s;
+	transition:opacity .4s ease, left 0s ease 0s;
+}
+
+
+/* WIDGET LOCATION
+**************************************************/
+.monimie-widgets-wrapper,
+.monimie-widgets-wrapper .widget,
+.monimie-widgets-wrapper .textwidget,
+.monimie-widgets-wrapper .widget_text {
+    margin:0;
+    padding:0;
+    border:none;
+}
+.monimie-widgets-wrapper {
+    padding-bottom:15px;
+}
+
+
+/* SCROLLBAR STYLING
+**************************************************/
+.scroll-wrapper {
+	overflow:hidden !important;
+	padding:0 !important;
+	position:relative;
+}
+.scroll-wrapper > .scroll-content {
+	border:none !important;
+	box-sizing:content-box !important;
+	height:auto;
+	left:0;
+	margin:0;
+	max-height:none !important;
+	max-width:none !important;
+	overflow:scroll !important;
+	position:relative !important;
+	top:0;
+	width:auto !important;
+}
+.scroll-wrapper > .scroll-content::-webkit-scrollbar {
+	height:0;
+	width:0;
+}
+.scroll-element {
+	display:none;
+}
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+	display:block;
+}
+.monimie-subchat-area > .scroll-element,
+.monimie-subchat-area > .scroll-element div {
+	border:none;
+	margin:0;
+	padding:0;
+	position:absolute;
+	z-index:9999999999;
+}
+.monimie-subchat-area > .scroll-element div {
+	display:block;
+	height:100%;
+	left:0;
+	top:0;
+	width:100%;
+}
+.monimie-subchat-area > .scroll-element.scroll-x {
+	bottom:0;
+	height:8px;
+	left:0;
+	width:100%;
+}
+.monimie-subchat-area > .scroll-element.scroll-y {
+	max-height:100%;
+	right:5px;
+	top:5px;
+    bottom:5px;
+	width:6px;
+}
+.monimie-subchat-area > .scroll-element .scroll-element_outer {
+	overflow:hidden;
+}
+.monimie-subchat-area > .scroll-element .scroll-bar { background-color:#23527c; }
+
+/* update scrollbar offset if both scrolls are visible */
+.monimie-subchat-area > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track { left:-12px; }
+.monimie-subchat-area > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track { top:-12px; }
+
+.monimie-subchat-area > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -12px; }
+.monimie-subchat-area > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -12px; }
+
+
+
+/* SOCIAL BAR
+**************************************************/
+
+.monimie-chat-input-wrapper {
+    position:absolute;
+    bottom:0;
+    display:table;
+    width:100%;
+    height:47px;
+    background-color:#202020;
+    
+    border-width:1px 0 2px 0;
+    border-style:solid;
+    border-top-color:#262626;
+    border-bottom-color:#23527c;
+    
+    /* for sticky on iOS (otherwise finger will have to be lifted before menubar sticks to top) */
+    transform:translate3d(0px,0px,0px);
+    -webkit-transform:translate3d(0px,0px,0px);
+}
+
+.monimie-social-bar-label {
+    display:table-cell;
+    vertical-align:middle;
+    font-family:'Roboto';
+    font-weight:400;
+    font-size:11px;
+    padding-top:1px;
+    padding-left:12px;
+    cursor:default;
+}
+.monimie-social-bar-icons a,
+.monimie-social-bar-icons a:hover {
+    text-decoration:none;
+}
+.monimie-social-bar-label,
+.monimie-social-bar-icons span {
+    color:#BEBEBE;
+    text-decoration:none;
+    
+    -webkit-transition:all .2s ease;
+	-moz-transition:all .2s ease;
+	transition:all .2s ease;
+}
+.monimie-social-bar-icons span:hover {
+    color:#fff;
+    text-decoration:none;
+}
+.monimie-social-bar-icons {
+    display:table-cell;
+    vertical-align:middle;
+    text-align:center;
+    padding-top:3px;
+}
+.monimie-social-bar-icons span {
+    -webkit-transition:all .2s ease;
+	-moz-transition:all .2s ease;
+	transition:all .2s ease;
+}
+.monimie-social-bar-icons button { padding:0 5px; }
+.monimie-social-bar-icons button:last-child { padding-right:15px; display: inline-block;}
+
+
+/* SOCIAL ICONS
+**************************************************/
+@font-face {
+    font-family:'icomoon';
+    src:url('fonts/icomoon.eot?8ocnaq');
+    src:url('fonts/icomoon.eot?8ocnaq#iefix') format('embedded-opentype'),
+        url('fonts/icomoon.ttf?8ocnaq') format('truetype'),
+        url('fonts/icomoon.woff?8ocnaq') format('woff'),
+        url('fonts/icomoon.svg?8ocnaq#icomoon') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+[class^="monimie-icon-"], [class*=" monimie-icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family:'icomoon' !important;
+    speak:none;
+    font-style:normal;
+    font-weight:normal;
+    font-variant:normal;
+    text-transform:none;
+    line-height:1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+/* youtube icon */
+.monimie-icon-youtube:before {
+    content:"\ea9d";
+    font-size:16px;
+}
+span.monimie-icon-youtube {
+    margin-right:2px;
+}
+/* twitter icon */
+.monimie-icon-twitter:before {
+    content:"\ea96";
+    font-size:14px;
+}
+span.monimie-icon-twitter {
+    position:relative;
+    top:-1px;
+}
+/* facebook icon */
+.monimie-icon-facebook:before {
+    content:"\ea90";
+    font-size:12px;
+}
+span.monimie-icon-facebook {
+    position:relative;
+    top:-2px;
+}
+/* instagram icon */
+.monimie-icon-instagram:before {
+    content:"\ea92";
+    font-size:13px;
+}
+span.monimie-icon-instagram {
+    position:relative;
+    top:-1px;
+}
+/* google plus icon */
+.monimie-icon-google-plus:before {
+    content:"\ea8b";
+    font-size:17px;
+}
+span.monimie-icon-google-plus {
+    position:relative;
+    top:1px;
+}
+
+
+/* CLOSE BUTTON
+**************************************************/
+.monimie-close-btn {
+    position:fixed;
+    width:23px;
+    height:25px;
+    top:16px;
+    right:16px;
+    display:none;
+    cursor:pointer;
+}
+.monimie-close-btn::before {
+    position:relative;
+    right:-10px;
+    content:'';
+    width:2px;
+    height:26px;
+    background-color:#484848;
+    display:block;
+    
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+.monimie-close-btn::after {
+    position:relative;
+    right:-10px;
+    top:-26px;
+    content:'';
+    width:2px;
+    height:26px;
+    background-color:#484848;
+    display:block;
+    
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+}
+
+
+/* Z-INDEXES
+**************************************************/
+/* shade at the bottom of the menu */
+.monimie-chat-area-wrapper::before { z-index:99996; }
+/* close button */
+.monimie-close-btn { z-index:99995; }
+/* menu wrapper */
+.monimie-chat-area-wrapper { z-index:99994; }
+/* menu button */
+.monimie-menu-btn-wrapper { z-index:99992; }
+/* background overlay */
+.monimie-overlay { z-index:99991; }
+
+
+/* WORDPRESS TOOLBAR
+**************************************************/
+@media screen and (max-width: 782px) {
+	#wpadminbar { position: fixed !important; }
+}
+/* if WordPress amin bar active, keep it above everything else */
+#wpadminbar { z-index:9999999999999999999999999999; }
+
+/* hide monimie between resolutions */
+		@media ( min-width:px) and (max-width:px) {
+            .monimie-menu-btn-wrapper,
+			.monimie-overlay,
+			.monimie-chat-area-wrapper { display:none !important; }
+		}
+		/* hide theme menu */
+		        
+        /* full-screen break off point */
+        @media (max-width:500px) {
+            .monimie-chat-area-wrapper {
+                position:fixed !important;
+                top:0;
+                width:100%;
+                height:100%;
+            }
+            .monimie-chat-area-inner {
+                padding-top:50px;
+            }
+            .monimie-menu-active {
+                left:0px;
+                right:0;
+            }
+            .monimie-menu-active .monimie-close-btn { display:inline; }
+            
+            /* reposition social bar if full-screen and toolbar active */
+                        
+        }
+		
+		
+		
+		
+				
+.monimie-chat-list-in {
+
+    width: 100%;
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+
+}
+.monimie-chat-list-in, .monimie-chat-list-out {
+
+    padding: 0;
+    margin: 25px 0;
+    font-size: .85em;
+
+}
+
+.monimie-chat-text-in {
+
+    width: 100%;
+    background-color: #23527c;
+    color: #fff;
+    border-radius: 10px;
+
+}
+.monimie-chat-text-in, .monimie-chat-text-out {
+
+    position: relative;
+    padding: 1em 1em 1em 3em;
+    line-height: 1.3rem;
+
+}
+
+.monimie-chat-text-in::before {
+
+    left: -4.5px;
+    border-top: 4.5px solid transparent;
+    border-right: 5px solid #23527c;
+    border-bottom: 9px solid transparent;
+
+}
+
+ul.monimie-chatwindow span:first-child {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+}
+.monimie-chat-text-in, .monimie-chat-text-out {
+
+    line-height: 1.3rem;
+
+}
+.monimie-chat-list-in, .monimie-chat-list-out {
+
+    font-size: .85em;
+
+}
+ul.monimie-chatwindow {
+
+    list-style: none;
+
+}
+
+
+
+.monimie-chat-list-out {
+
+    width: 100%;
+    -ms-flex-item-align: end;
+    align-self: flex-end;
+
+}
+.monimie-chat-list-in, .monimie-chat-list-out {
+
+    padding: 0;
+    margin: 25px 0;
+    font-size: .85em;
+
+}
+.monimie-chat-text-out::before {
+
+    right: -7px;
+    border-top: 5px solid transparent;
+    border-left: 9px solid #b0bec5;
+    border-bottom: 5px solid transparent;
+
+}
+.monimie-chat-text-in::before, .monimie-chat-text-out::before {
+
+    content: "";
+    position: absolute;
+    top: calc(50% - 4.5px);
+
+}
+.monimie-chat-text-out {
+
+    color: #fff;
+
+}
+.monimie-chat-text-in, .monimie-chat-text-out {
+
+    line-height: 1.3rem;
+
+}
+.monimie-chat-text-out {
+
+    background-color: #b0bec5;
+    border-radius: 10px;
+    color: #fff;
+
+}
+.monimie-chat-text-in, .monimie-chat-text-out {
+
+    position: relative;
+    padding: 1em 1em 1em 3em;
+    line-height: 1.3rem;
+
+}
+.monimie-chat-list-out .monimie-chat-time {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+
+}
+ul.monimie-chatwindow span:first-child {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+}
+.Time {
+
+    font-size: .6em;
+    padding: 5px 0;
+
+}
+
+ul.monimie-chatwindow {
+
+    padding: 10px 10px;
+    list-style: none;
+    margin: 0;
+    overflow-y: scroll;
+    background-image: url(https://www.endopay.com/images/monimie_bg.svg);
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed !important;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 0px;
+    flex: 1 0 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+	overflow-y: hidden;
+
+}
+
+
+.monimie-msg-input {
+
+    background-color: transparent;
+    margin: 0;
+	padding:2px 15px 2px 5px;
+    width: 100%;
+    height: 100%;
+	border: 1px solid transparent;
+    font-size: .85em;
+	color: #fff;
+	margin-left: 10px; 
+	border-radius: 3px;
+	text-decoration: none;
+}
+.monimie-msg-form {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    background: transparent;
+    height: 48px;
+
+}
+[type="reset"], [type="submit"], button, html [type="button"] {
+
+    -webkit-appearance: button;
+
+}
+[type="button"], [type="reset"], [type="submit"], button {
+
+    cursor: pointer;
+
+}
+.monimie-msg-btn {
+
+    background: #23527c;
+    height: 100%;
+    width: 40px;
+    cursor: pointer;
+    box-shadow: -1px 0 10px rgba(0,0,0,.3),0 5px 10px #bfc3cf;
+    border: 0;
+    font-size: 1rem;
+    color: #fff;
+}
+
+
+.scrolling-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;  
+}
+
+/* QUICK REPLY
+**************************************************/
+.monimie-quickreply-wrapper {
+    overflow-y: hidden;
+	overflow-x: auto;
+    
+    width:100%;
+    height:61px;
+    background-color:#202020;
+    
+    border-width:1px 0 2px 0;
+    border-style:solid;
+    border-top-color:#23527c;
+    border-bottom-color:#262626;
+    
+    /* for sticky on iOS (otherwise finger will have to be lifted before menubar sticks to top) */
+    transform:translate3d(0px,0px,0px);
+    -webkit-transform:translate3d(0px,0px,0px);	
+	position:relative;
+    top:0;
+    right:0;
+    left:0;	
+	bottom:47px;	
+	white-space: nowrap;
+}
+
+.monimie-buttons-options, .monimie-quickreply-options {
+	display: inline-block;
+	background-color: #fff;
+    color: #7f8c8d;
+    font-size: 0.9em;
+    padding: 0.6em 1.1em !important;
+    margin: 0.75em 1em 1em 1.5em !important;
+    border-radius: 5px;
+    border: 1px solid #f38230;	
+}
+
+.monimie-buttons-options:hover, .monimie-quickreply-options:hover {
+	background-color: #f38230;
+    color: #fff;
+	font-weight: 600;
+	border: 1px solid #fff;	
+	text-decoration: none !important;
+}
+
+
+.monimie-chat-buttons {
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    list-style: none;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+	margin-left: -10px;
+
+}
+
+.monimie-chat-text-in a:hover, .monimie-chat-text-in a:focus {
+
+    text-decoration: none !important;
+	color: #fff !important;
+
+}
+
+.monimie-chat-text-in a {
+    color: #7f8c8d !important;
+}
+
+
+.monimie-option-wrapper {
+	z-index: 99992;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    min-width: 25px;
+    max-width: 500px;
+    height: 30px;
+    cursor: pointer;
+    background-color: #23527c;
+    border: 1px solid #23527c;
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    -moz-box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.4);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.monimie-option {
+    position: relative;
+	margin: 5px 0 auto;
+}
+
+.monimie-option-ellipsis {
+    font-size: 30px;
+    padding: 0 15px;
+	color: #fff;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	
+}
+
+.fa-ellipsis-v:before {
+    content: "\f142";
+}
+
+
+
+.monimie-header-option-settings {
+	display: none;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 2px 5px 20px rgba(0,0,0,.5);
+    min-width: 200px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: .8em;
+    list-style: none;
+    cursor: pointer;
+    z-index: 99997;
+	opacity : 1;
+    -webkit-animation: band .5s;
+    animation: band .5s;
+}
+
+.monimie-header-option-setting {
+    margin: 10px 0;
+    padding: 5px 0;
+    color: #7f8c8d;
+}
+
+.monimie-header-option-setting .fa {
+    color: #5477d5;
+    padding-right: 5px;
+}
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.monimie-header-option-setting {
+    margin: 10px 0;
+    padding: 5px 0;
+    color: #7f8c8d;
+}
+
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.fa-gear:before, .fa-cog:before {
+    content: "\f013";
+}
+
+.fa-commenting:before {
+    content: "\f27a";
+}
+
+.ui-corner-all{
+			margin: 0 auto;
+			border-radius: 5px;
+			z-index: 999999;
+			
+		}
+		.ui-widget-header {
+			background: #ffffff;
+			color: #000000;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-family:'Gochi Hand', cursive;
+			font-size: 18px;
+		}
+		
+
+		.ui-draggable .ui-dialog-titlebar {
+			cursor: move;
+		}
+		
+		.ui-widget-content {
+			background: #23527c;
+			color: #333333;
+			font-family:'Gochi Hand', cursive;
+			font-size: 16px;
+		}
+		
+		.ui-dialog {
+			top: 50px !important;
+		}
+		
+		.dialog-input{
+		    background: #1B1B1B; 
+			color: #ffffff; 
+			width: 80%; 
+			margin-left:10%; 
+			border: 1px solid #dddddd; 
+			border-radius: 5px; 
+			padding: 20px; 
+			line-height: 10px; 
+			height: 30px;
+			text-align: center;
+			opacity: 0.8;
+		}
+		div>.dialog-btn{
+			margin: 0 auto;
+		}

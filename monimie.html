@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+
+	<title>MoniMie Crypto Bot</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://monimie.com/monimie.css?ver=1" type="text/css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gochi+Hand|Patrick+Hand" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto%3A400%2C700&#038;ver=1.0.0" type="text/css"/>
+	<link rel="stylesheet" href="https://monimie.com/style.css?ver=1" id="style-css" type="text/css" />
+
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="https://monimie.com/scrollbar.min.js?ver=1" type="text/javascript"></script>
+	
+</head>
+
+<body ng-app="realtimeData">		
+
+<div id="body" class="pagewidth clearfix">
+	<div class="try-it-out">
+		< Try it out!
+	</div>
+	<div class="cursive">
+		<center>I'm MoniMie :)<br/>I can help get your Endopay Transactions done on time.<br/>Just Chat me up!</center>
+	</div>
+</div>       
+
+        <!-- BEGIN MENU BUTTON -->
+        <div class="monimie-menu-btn-wrapper monimie-menu-btn-wrapper-right">
+            <div class="monimie-menu-tooltip"></div>
+            <div class="monimie-menu-btn-wrapper-inner">
+                <div class="monimie-menu-btn"></div>
+                <div class="monimie-menu-btn-middle"></div>
+            </div>
+			<div class="monimie-menu-btn-wrapper-inner-right">
+				<div class="monimie-menu-btn-middle-right"></div>
+			</div>
+            <div class="monimie-menu-btn-text-wrapper">
+                <div class="monimie-menu-btn-text"><span style="font-family:'Gochi Hand', cursive; font-size:16px;"> MoniMie</span></div>
+            </div>
+        </div>
+		
+		
+        <!-- END MENU BUTTON -->
+		<div class="monimie-option-wrapper"><div class="monimie-option"><i class="monimie-option-ellipsis fa fa-ellipsis-v"></i><ul class="monimie-header-option-settings"><li class="monimie-header-option-setting"><span class="fa fa-commenting"></span><a href="#" target="_blank">Contact Support</a></li><li class="monimie-header-option-setting"><span class="fa fa-cog"></span><a href="#" onclick="return false;" onmousedown="clearChat();">Clear Chat</a></li><li class="monimie-header-option-setting"><span class="fa fa-cog"></span><a href="#" onclick="return false;" onmousedown="logOut();">Logout</a></li></ul></div></div><span id="lg"></span><span id="cc"></span><span id="au"></span><span id="setau"></span><span id="sound" onclick="playSound()"></span><span id="ipo" state=""></span><span id="checkipo" onclick="checkipod()" state=""></span>
+		
+		
+		<!-- BEGIN MENU -->
+		
+        <div class="monimie-chat-area-wrapper" id="messageArea" >
+            <div class="monimie-close-btn"></div>
+            <div class="monimie-subchat-area smooth-scroll" id="scroller">
+                <div class="monimie-chat-area-inner">
+                    <!-- BEGIN MENU -->
+                    <div class="monimie-chat-container">
+							<ul class="monimie-chatwindow" id="monimie-chatwindow"></ul>						
+					</div>                    
+					<!-- END MENU -->		
+                    
+                </div>
+            </div>			
+			
+            <!-- BEGIN INPUT -->
+            <div class="monimie-chat-input-wrapper">
+                <form id="monimie-msg-form" class="monimie-msg-form" autocomplete="off"><input class="monimie-msg-input" placeholder="Type message here..." id="monimie-user-msg" type="text"/><button type="submit" class="fa fa-paper-plane monimie-msg-btn"></button></form>				
+            </div>
+            <!-- END INPUT -->
+			
+        </div>
+		<!-- END MENU -->
+		
+        
+        <!-- BEGIN BACKGROUND OVERLAY -->
+        <div class="monimie-overlay"></div>
+        <!-- END BACKGROUND OVERLAY -->
+		
+		
+		<div id="model_details"></div>
+		
+<script type='text/javascript' src='https://monimie.com/hash.js?ver=1'></script>
+<script type='text/javascript' src='https://monimie.com/monimie.js?ver=1'></script>
+</body>
+</html>
